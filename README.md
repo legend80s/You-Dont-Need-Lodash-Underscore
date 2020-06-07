@@ -210,6 +210,16 @@ _.chunk(['a', 'b', 'c', 'd'], 2);
 _.chunk(['a', 'b', 'c', 'd'], 3);
 // => [['a', 'b', 'c'], ['d']]
 
+// My
+
+function chunk(arr = [], size = 1) {
+  return arr.reduce((acc, cur, idx) => { 
+    if (idx % size === 0) { acc.push([ cur ]) }
+    else { acc[acc.length - 1].push(cur) }
+    
+    return acc;
+  }, [])
+}
 
 // Native
 
